@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace ClassMetodDemo
 {
@@ -6,14 +7,25 @@ namespace ClassMetodDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-        }
-    }
+            Customer customer1 = new Customer()
+            {
+                Id = 1,
+                Name = "Ali",
+                Surname = "Veli"
+            };
 
-    class Customer
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
+            Customer customer2 = new Customer()
+            {
+                Id = 2,
+                Name = "Hasan",
+                Surname = "Ali"
+            };
+
+            CustomerManager customerManager = new CustomerManager();
+
+            customerManager.Add(customer1);
+
+            customerManager.Delete(customer2);
+        }
     }
 }
